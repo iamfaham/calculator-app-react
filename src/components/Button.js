@@ -18,13 +18,15 @@ const getStyleName = (btn) => {
 
 const Button = ({ value }) => {
   const { calc, setCalc } = useContext(CalcContext);
+
   // User clicks period
-  const commaClick = () => {
+  const periodClick = () => {
     setCalc({
       ...calc,
       num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
     });
   };
+
   // User clicks AC
   const clearClick = () => {
     setCalc({
@@ -33,12 +35,12 @@ const Button = ({ value }) => {
       res: 0,
     });
   };
-  // Usef clicks number
 
+  // User clicks number
   const handleClickButton = () => {
     const numberString = value.toString();
     let numberValue;
-    if (numberString === 0 && calc.nunm === 0) {
+    if (numberString === 0 && calc.num === 0) {
       numberValue = "0";
     } else {
       numberValue = Number(calc.num + numberString);
@@ -59,7 +61,7 @@ const Button = ({ value }) => {
     });
   };
 
-  //   user click equals
+  //  User click equals
   const equalsClick = () => {
     if (calc.res && calc.num) {
       const math = (a, b, sign) => {
@@ -89,7 +91,7 @@ const Button = ({ value }) => {
     });
   };
 
-  //   user clicks factorial sign
+  //  User clicks factorial
 
   const factorialClick = () => {
     const factorial = () => {
@@ -117,7 +119,7 @@ const Button = ({ value }) => {
 
   const handleBtnClick = () => {
     const results = {
-      ".": commaClick,
+      ".": periodClick,
       AC: clearClick,
       "/": signClick,
       "!": factorialClick,
