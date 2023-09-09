@@ -3,11 +3,10 @@ import React from "react";
 const Header = () => {
   return (
     <div>
-      <h1 className="heading">
-        Calculator app
-        <br />
-        using React
-      </h1>
+      <h2 className="heading">
+        Calculator app using <br />
+        React
+      </h2>
     </div>
   );
 };

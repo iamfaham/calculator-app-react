@@ -37,7 +37,7 @@ const Button = ({ value }) => {
   };
 
   // User clicks number
-  const handleClickButton = () => {
+  const handleClickNumber = () => {
     const numberString = value.toString();
     let numberValue;
     if (numberString === 0 && calc.num === 0) {
@@ -82,7 +82,6 @@ const Button = ({ value }) => {
   };
 
   //   User clicks Percent
-
   const percentClick = () => {
     setCalc({
       num: calc.num / 100,
@@ -92,7 +91,6 @@ const Button = ({ value }) => {
   };
 
   //  User clicks factorial
-
   const factorialClick = () => {
     const factorial = () => {
       var ans = 1;
@@ -108,7 +106,7 @@ const Button = ({ value }) => {
     });
   };
 
-  // User clicks invert Sign button
+  // User clicks invert sign button
   const invertSignClick = () => {
     setCalc({
       num: calc.num ? calc.num * -1 : 0,
@@ -133,9 +131,10 @@ const Button = ({ value }) => {
     if (results[value]) {
       return results[value]();
     } else {
-      return handleClickButton();
+      return handleClickNumber();
     }
   };
+
   return (
     <button
       onClick={handleBtnClick}
